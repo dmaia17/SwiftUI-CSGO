@@ -29,19 +29,41 @@ class CSGOMainViewModel: ObservableObject {
         self.fetchMatches()
     }
 
+    // MARK: Public methods
     func fetchMatches() {
         guard !isLoading && hasMorePages else { return }
 
         isLoading = true
 
         service.getMatches(page: currentPage, successCallback: { [weak self] response in
-            self?.matches.append(contentsOf: response)
-            self?.state = .loaded
-            self?.isLoading = false
-            self?.hasMorePages = !response.isEmpty
+            self?.handleMatchSuccessResponse(response: response)
         }, failureCallback: { [weak self] in
-            self?.isLoading = false
-            self?.state = .error
+            self?.handleMatchErrorResponse()
         })
+    }
+
+    func refreshMatches() {
+        hasMorePages = true
+        currentPage = 1
+        fetchMatches()
+    }
+
+    // MARK: Private methods
+
+    private func handleMatchSuccessResponse(response: [CSGOMatchModel]) {
+        if currentPage == 1 {
+            matches = response
+        } else {
+            matches.append(contentsOf: response)
+        }
+
+        state = .loaded
+        isLoading = false
+        hasMorePages = !response.isEmpty
+    }
+
+    private func handleMatchErrorResponse() {
+        isLoading = false
+        state = .error
     }
 }

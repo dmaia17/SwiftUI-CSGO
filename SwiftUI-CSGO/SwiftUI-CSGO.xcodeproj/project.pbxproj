@@ -28,6 +28,8 @@
 		5147EA042A7B2A6500271E31 /* CSGOOpponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA032A7B2A6500271E31 /* CSGOOpponentModel.swift */; };
 		5147EA062A7B2A7700271E31 /* CSGOPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA052A7B2A7700271E31 /* CSGOPlayerModel.swift */; };
 		5147EA082A7B2BBA00271E31 /* CSGOServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA072A7B2BBA00271E31 /* CSGOServiceProvider.swift */; };
+		5147EA0C2A7D743900271E31 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */; };
+		5147EA0E2A7D745B00271E31 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0D2A7D745B00271E31 /* View+Ext.swift */; };
 		693FF7E9D6E4EED93998B59E /* Pods_SwiftUI_CSGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */; };
 		B3FBC278A44111EC8A08E27F /* Pods_SwiftUI_CSGOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490FA79CA27E202B8311EB90 /* Pods_SwiftUI_CSGOTests.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		5147EA032A7B2A6500271E31 /* CSGOOpponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOOpponentModel.swift; sourceTree = "<group>"; };
 		5147EA052A7B2A7700271E31 /* CSGOPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOPlayerModel.swift; sourceTree = "<group>"; };
 		5147EA072A7B2BBA00271E31 /* CSGOServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOServiceProvider.swift; sourceTree = "<group>"; };
+		5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
+		5147EA0D2A7D745B00271E31 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		552B65AEF313E56C40685FE8 /* Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAF418637C3728BECF31DD9E /* Pods-SwiftUI-CSGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO/Pods-SwiftUI-CSGO.release.xcconfig"; sourceTree = "<group>"; };
 		B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_CSGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				5147E9FB2A7B11A700271E31 /* Color+Ext.swift */,
+				5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */,
+				5147EA0D2A7D745B00271E31 /* View+Ext.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -273,7 +279,6 @@
 				3EB51A2DE01C2EDE808841D7 /* Pods-SwiftUI-CSGOTests.debug.xcconfig */,
 				16C7A7DCBDD7A390B94D1644 /* Pods-SwiftUI-CSGOTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -525,10 +530,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5147EA0E2A7D745B00271E31 /* View+Ext.swift in Sources */,
 				5147E9FE2A7B2A0900271E31 /* CSGOMatchModel.swift in Sources */,
 				5147E9F52A7B114000271E31 /* CSGOMainViewModel.swift in Sources */,
 				5147E9F32A7B112F00271E31 /* CSGOMainView.swift in Sources */,
 				5147EA082A7B2BBA00271E31 /* CSGOServiceProvider.swift in Sources */,
+				5147EA0C2A7D743900271E31 /* CornerRadiusStyle.swift in Sources */,
 				5147EA042A7B2A6500271E31 /* CSGOOpponentModel.swift in Sources */,
 				5147E9E92A7B104000271E31 /* DefaultRouter.swift in Sources */,
 				5147E9ED2A7B105F00271E31 /* Coordinator.swift in Sources */,
@@ -705,8 +712,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,9 +721,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "danielmaia.com.SwiftUI-CSGO";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -735,8 +745,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -744,9 +754,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "danielmaia.com.SwiftUI-CSGO";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

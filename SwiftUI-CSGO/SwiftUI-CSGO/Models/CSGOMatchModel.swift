@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CSGOMatchModel: Codable, Identifiable {
+struct CSGOMatchModel: Codable, Identifiable, Equatable {
     var id: Int = 0
     var league: CSGOLeagueModel?
     var status: MatchStatus = .not_started
@@ -26,6 +26,10 @@ struct CSGOMatchModel: Codable, Identifiable {
         self.begin_at = try container.decodeIfPresent(String.self, forKey: .begin_at) ?? ""
         self.games = try container.decodeIfPresent([CSGOGameModel].self, forKey: .games) ?? nil
         self.opponents = try container.decodeIfPresent([CSGOOpponentModel].self, forKey: .opponents) ?? nil
+    }
+
+    static func == (lhs: CSGOMatchModel, rhs: CSGOMatchModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
