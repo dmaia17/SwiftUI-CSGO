@@ -5,4 +5,13 @@
 //  Created by Daniel Maia dos Passos on 02/08/23.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+
+class CSGODetailViewModel: ObservableObject {
+    private let service: CSGOServiceProviderProtocol
+
+    init(service: CSGOServiceProviderProtocol) {
+        self.service = service
+    }
+}

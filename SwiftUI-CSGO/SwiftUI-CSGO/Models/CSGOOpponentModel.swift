@@ -7,30 +7,31 @@
 
 import Foundation
 
-struct CSGOOpponentModel: Codable {
-  var opponent: CSGOOpponentDataModel?
+struct CSGOOpponentModel: Codable, Identifiable {
+    var id = UUID()
+    var opponent: CSGOOpponentDataModel?
 
-  init() {}
+    init() {}
 
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
 
-    self.opponent = try container.decodeIfPresent(CSGOOpponentDataModel.self, forKey: .opponent) ?? nil
-  }
+        self.opponent = try container.decodeIfPresent(CSGOOpponentDataModel.self, forKey: .opponent) ?? nil
+    }
 }
 
 struct CSGOOpponentDataModel: Codable {
-  var id: Int = 0
-  var name: String = ""
-  var image_url: String = ""
+    var id: Int = 0
+    var name: String = ""
+    var image_url: String = ""
 
-  init() {}
+    init() {}
 
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
 
-    self.id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
-    self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
-    self.image_url = try container.decodeIfPresent(String.self, forKey: .image_url) ?? ""
-  }
+        self.id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
+        self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        self.image_url = try container.decodeIfPresent(String.self, forKey: .image_url) ?? ""
+    }
 }

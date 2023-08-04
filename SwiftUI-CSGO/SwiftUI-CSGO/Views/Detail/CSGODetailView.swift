@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct CSGODetailView: View {
+    @ObservedObject var viewModel = CSGODetailViewModel(service: CSGOServiceProvider())
+    let matchId: Int
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Match Detail for ID: \(matchId)")
     }
 }
 
 struct CSGODetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CSGODetailView()
+        CSGODetailView(matchId: 1)
     }
 }
