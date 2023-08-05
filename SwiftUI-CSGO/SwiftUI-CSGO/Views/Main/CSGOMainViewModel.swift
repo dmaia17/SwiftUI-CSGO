@@ -16,11 +16,11 @@ class CSGOMainViewModel: ObservableObject {
     }
 
     @Published private(set) var state: State = .loading
-
     @Published var matches: [CSGOMatchModel] = []
     @Published var isLoading: Bool = false
     @Published var currentPage: Int = 1
     @Published var hasMorePages: Bool = true
+    @Published var matchId: Int?
 
     private let service: CSGOServiceProviderProtocol
 

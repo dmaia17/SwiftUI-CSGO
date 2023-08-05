@@ -35,6 +35,10 @@ struct CSGOMainView: View {
             itemListView(match: match)
                 .listRowBackground(Color.CSGOPrimary)
                 .listRowSeparator(.hidden)
+                .overlay {
+                    NavigationLink("", destination: CSGODetailView(matchId: match.id))
+                        .opacity(0)
+                }
         }
         .listStyle(.inset)
         .refreshable {
