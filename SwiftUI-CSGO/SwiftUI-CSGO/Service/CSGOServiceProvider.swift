@@ -49,6 +49,8 @@ extension CSGOServiceProvider: CSGOServiceProviderProtocol {
         AF.request("https://api.pandascore.co/csgo/players?sort=name&filter[team_id]=\(team2),\(team1)", headers: createHeader())
             .validate()
             .responseDecodable(of: [CSGOPlayerModel].self) { response in
+                print(response)
+
                 guard let players = response.value else {
                     failureCallback()
                     return

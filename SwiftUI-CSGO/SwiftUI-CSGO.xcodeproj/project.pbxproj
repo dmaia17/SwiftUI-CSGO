@@ -30,6 +30,8 @@
 		5147EA082A7B2BBA00271E31 /* CSGOServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA072A7B2BBA00271E31 /* CSGOServiceProvider.swift */; };
 		5147EA0C2A7D743900271E31 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */; };
 		5147EA0E2A7D745B00271E31 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0D2A7D745B00271E31 /* View+Ext.swift */; };
+		5147EA102A7DE1CF00271E31 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0F2A7DE1CF00271E31 /* ViewState.swift */; };
+		5147EA122A7FF62200271E31 /* PlaceholderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA112A7FF62200271E31 /* PlaceholderImage.swift */; };
 		693FF7E9D6E4EED93998B59E /* Pods_SwiftUI_CSGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */; };
 		B3FBC278A44111EC8A08E27F /* Pods_SwiftUI_CSGOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490FA79CA27E202B8311EB90 /* Pods_SwiftUI_CSGOTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		5147EA072A7B2BBA00271E31 /* CSGOServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOServiceProvider.swift; sourceTree = "<group>"; };
 		5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		5147EA0D2A7D745B00271E31 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		5147EA0F2A7DE1CF00271E31 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		5147EA112A7FF62200271E31 /* PlaceholderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImage.swift; sourceTree = "<group>"; };
 		552B65AEF313E56C40685FE8 /* Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAF418637C3728BECF31DD9E /* Pods-SwiftUI-CSGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO/Pods-SwiftUI-CSGO.release.xcconfig"; sourceTree = "<group>"; };
 		B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_CSGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,8 @@
 				5147E9FB2A7B11A700271E31 /* Color+Ext.swift */,
 				5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */,
 				5147EA0D2A7D745B00271E31 /* View+Ext.swift */,
+				5147EA0F2A7DE1CF00271E31 /* ViewState.swift */,
+				5147EA112A7FF62200271E31 /* PlaceholderImage.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -538,12 +544,14 @@
 				5147EA0C2A7D743900271E31 /* CornerRadiusStyle.swift in Sources */,
 				5147EA042A7B2A6500271E31 /* CSGOOpponentModel.swift in Sources */,
 				5147E9E92A7B104000271E31 /* DefaultRouter.swift in Sources */,
+				5147EA122A7FF62200271E31 /* PlaceholderImage.swift in Sources */,
 				5147E9ED2A7B105F00271E31 /* Coordinator.swift in Sources */,
 				5147EA062A7B2A7700271E31 /* CSGOPlayerModel.swift in Sources */,
 				5147E9EB2A7B104F00271E31 /* NavigationRouter.swift in Sources */,
 				5147E9FA2A7B117B00271E31 /* CSGODetailView.swift in Sources */,
 				5147EA002A7B2A3300271E31 /* CSGOLeagueModel.swift in Sources */,
 				5147E9BA2A7B064F00271E31 /* SwiftUI_CSGOApp.swift in Sources */,
+				5147EA102A7DE1CF00271E31 /* ViewState.swift in Sources */,
 				5147E9F82A7B116600271E31 /* CSGODetailViewModel.swift in Sources */,
 				5147E9FC2A7B11A700271E31 /* Color+Ext.swift in Sources */,
 				5147EA022A7B2A4F00271E31 /* CSGOGameModel.swift in Sources */,

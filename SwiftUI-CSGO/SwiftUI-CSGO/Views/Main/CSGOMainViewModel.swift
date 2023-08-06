@@ -9,15 +9,9 @@ import SwiftUI
 import Combine
 
 class CSGOMainViewModel: ObservableObject {
-    enum State {
-        case loading
-        case loaded
-        case error
-    }
 
     @Published private(set) var state: State = .loading
     @Published var matches: [CSGOMatchModel] = []
-    @Published var isLoading: Bool = false
     @Published var currentPage: Int = 1
     @Published var hasMorePages: Bool = true
     @Published var matchId: Int?
@@ -30,10 +24,9 @@ class CSGOMainViewModel: ObservableObject {
     }
 
     // MARK: Public methods
+    
     func fetchMatches() {
-        guard !isLoading && hasMorePages else { return }
-
-        isLoading = true
+        guard hasMorePages else { return }
 
         service.getMatches(page: currentPage, successCallback: { [weak self] response in
             self?.handleMatchSuccessResponse(response: response)
@@ -58,12 +51,10 @@ class CSGOMainViewModel: ObservableObject {
         }
 
         state = .loaded
-        isLoading = false
         hasMorePages = !response.isEmpty
     }
 
     private func handleMatchErrorResponse() {
-        isLoading = false
         state = .error
     }
 }

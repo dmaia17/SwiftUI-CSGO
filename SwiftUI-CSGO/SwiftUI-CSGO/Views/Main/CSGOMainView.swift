@@ -36,7 +36,7 @@ struct CSGOMainView: View {
                 .listRowBackground(Color.CSGOPrimary)
                 .listRowSeparator(.hidden)
                 .overlay {
-                    NavigationLink("", destination: CSGODetailView(matchId: match.id))
+                    NavigationLink("", destination: CSGODetailView(match: match))
                         .opacity(0)
                 }
         }
@@ -76,15 +76,18 @@ struct CSGOMainView: View {
                                     .resizable()
                                     .frame(width: 60, height: 60)
                             } placeholder: {
-                                placeholderImage()
+                                PlaceholderImage(size: 60)
                             }
+
+                            Text(opponents[0].opponent?.name ?? "")
+                                .foregroundColor(.white)
                         } else {
-                            placeholderImage()
+                            PlaceholderImage(size: 60)
                         }
                     }
 
                     Text("vs")
-                        .foregroundColor(.CSGOGray)
+                        .foregroundColor(.white)
 
                     VStack {
                         if let opponents = match.opponents, !opponents.isEmpty, opponents.count > 1 {
@@ -93,10 +96,13 @@ struct CSGOMainView: View {
                                     .resizable()
                                     .frame(width: 60, height: 60)
                             } placeholder: {
-                                placeholderImage()
+                                PlaceholderImage(size: 60)
                             }
+
+                            Text(opponents[1].opponent?.name ?? "")
+                                .foregroundColor(.CSGOGray)
                         } else {
-                            placeholderImage()
+                            PlaceholderImage(size: 60)
                         }
                     }
                 }
@@ -112,7 +118,7 @@ struct CSGOMainView: View {
                             .resizable()
                             .frame(width: 16, height: 16)
                     } placeholder: {
-                        placeholderImage(size: 16)
+                        PlaceholderImage(size: 16)
                     }
 
                     Text(match.league?.name ?? "")
@@ -137,12 +143,6 @@ struct CSGOMainView: View {
             }
         }
 
-    }
-
-    private func placeholderImage(size: CGFloat = 60) -> some View {
-        Color.CSGOGray
-            .frame(width: size, height: size)
-            .cornerRadius(size / 2)
     }
 
     private func customRadius() -> CGFloat {
