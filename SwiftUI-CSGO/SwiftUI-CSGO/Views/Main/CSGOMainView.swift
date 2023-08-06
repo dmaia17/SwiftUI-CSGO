@@ -58,74 +58,9 @@ struct CSGOMainView: View {
     private func itemListView(match: CSGOMatchModel) -> some View {
         VStack {
             VStack(spacing: 0) {
-                HStack {
-                    Spacer()
-
-                    Text("AGORA")
-                        .foregroundColor(.white)
-                        .padding(8)
-                        .background(Color.CSGORed)
-                        .cornerRadius(6, corners: [.topRight, .bottomLeft])
-                }
-
-                HStack(spacing: 16) {
-                    VStack {
-                        if let opponents = match.opponents, !opponents.isEmpty, opponents.count > 1 {
-                            AsyncImage(url: URL(string: opponents[0].opponent?.image_url ?? "")) { image in
-                                image
-                                    .resizable()
-                                    .frame(width: 60, height: 60)
-                            } placeholder: {
-                                PlaceholderImage(size: 60)
-                            }
-
-                            Text(opponents[0].opponent?.name ?? "")
-                                .foregroundColor(.white)
-                        } else {
-                            PlaceholderImage(size: 60)
-                        }
-                    }
-
-                    Text("vs")
-                        .foregroundColor(.white)
-
-                    VStack {
-                        if let opponents = match.opponents, !opponents.isEmpty, opponents.count > 1 {
-                            AsyncImage(url: URL(string: opponents[1].opponent?.image_url ?? "")) { image in
-                                image
-                                    .resizable()
-                                    .frame(width: 60, height: 60)
-                            } placeholder: {
-                                PlaceholderImage(size: 60)
-                            }
-
-                            Text(opponents[1].opponent?.name ?? "")
-                                .foregroundColor(.CSGOGray)
-                        } else {
-                            PlaceholderImage(size: 60)
-                        }
-                    }
-                }
-                .padding(16)
-
-                Divider()
-                    .background(Color.CSGOGray)
-                    .padding(.vertical, 16)
-
-                HStack {
-                    AsyncImage(url: URL(string: match.league?.image_url ?? "")) { image in
-                        image
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                    } placeholder: {
-                        PlaceholderImage(size: 16)
-                    }
-
-                    Text(match.league?.name ?? "")
-                        .foregroundColor(.CSGOGray)
-                }
-                .padding(.horizontal, 16)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                itemListHeaderView()
+                itemListOpponentView(match: match)
+                itemListBottomView(match: match)
             }
             .padding(.bottom, 16)
             .background(Color.CSGODarkBlue)
@@ -142,7 +77,82 @@ struct CSGOMainView: View {
                 viewModel.fetchMatches()
             }
         }
+    }
+    private func itemListHeaderView() -> some View {
+        HStack {
+            Spacer()
 
+            Text("AGORA")
+                .foregroundColor(.white)
+                .padding(8)
+                .background(Color.CSGORed)
+                .cornerRadius(6, corners: [.topRight, .bottomLeft])
+        }
+    }
+
+    private func itemListOpponentView(match: CSGOMatchModel) -> some View {
+        HStack(spacing: 16) {
+            VStack {
+                if let opponents = match.opponents, !opponents.isEmpty, opponents.count > 1 {
+                    AsyncImage(url: URL(string: opponents[0].opponent?.image_url ?? "")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                    } placeholder: {
+                        PlaceholderImage(size: 60)
+                    }
+
+                    Text(opponents[0].opponent?.name ?? "")
+                        .foregroundColor(.white)
+                } else {
+                    PlaceholderImage(size: 60)
+                }
+            }
+
+            Text("vs")
+                .foregroundColor(.white)
+
+            VStack {
+                if let opponents = match.opponents, !opponents.isEmpty, opponents.count > 1 {
+                    AsyncImage(url: URL(string: opponents[1].opponent?.image_url ?? "")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                    } placeholder: {
+                        PlaceholderImage(size: 60)
+                    }
+
+                    Text(opponents[1].opponent?.name ?? "")
+                        .foregroundColor(.CSGOGray)
+                } else {
+                    PlaceholderImage(size: 60)
+                }
+            }
+        }
+        .padding(16)
+    }
+
+    private func itemListBottomView(match: CSGOMatchModel) -> some View {
+        VStack{
+            Divider()
+                .background(Color.CSGOGray)
+                .padding(.vertical, 16)
+
+            HStack {
+                AsyncImage(url: URL(string: match.league?.image_url ?? "")) { image in
+                    image
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                } placeholder: {
+                    PlaceholderImage(size: 16)
+                }
+
+                Text(match.league?.name ?? "")
+                    .foregroundColor(.CSGOGray)
+            }
+            .padding(.horizontal, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 
     private func customRadius() -> CGFloat {
