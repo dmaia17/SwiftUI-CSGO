@@ -34,6 +34,7 @@ class CSGODetailViewModel: ObservableObject {
     // MARK: Public methods
 
     func loadData() {
+        setTimeStatus()
         let opponents = getOpponents()
 
         if !opponents.isEmpty {
@@ -41,9 +42,9 @@ class CSGODetailViewModel: ObservableObject {
           secondTeamId = opponents[1].opponent?.id ?? 0
 
           getPlayers(team1: firstTeamId, team2: secondTeamId)
+        } else {
+            state = .error
         }
-
-        setTimeStatus()
     }
 
     // MARK: Private methods
@@ -87,9 +88,9 @@ class CSGODetailViewModel: ObservableObject {
           if date.isInToday {
               timeStatus = String(format: Strings.timeFormat, Strings.today, date.hourAndMin())
           } else if date.isMoreThanSevenDay {
-              timeStatus = String(format: Strings.timeFormat, date.dayAndMonth(), date.hourAndMin())
+              timeStatus = String(format: Strings.timeFormat, date.dayAndMonth(), date.hourAndMin()).replacingOccurrences(of: ".", with: "")
           } else {
-              timeStatus = String(format: Strings.timeFormat, date.dayName().uppercased(), date.hourAndMin())
+              timeStatus = String(format: Strings.timeFormat, date.dayName().uppercased(), date.hourAndMin()).replacingOccurrences(of: ".", with: "")
           }
         }
     }

@@ -78,7 +78,7 @@ struct CSGODetailView: View {
 
             Text("vs")
                 .font(.regular12)
-                .foregroundColor(.CSGOGray)
+                .foregroundColor(.white)
 
             VStack {
                 if let opponents = viewModel.match.opponents, opponents.count > 1 {
