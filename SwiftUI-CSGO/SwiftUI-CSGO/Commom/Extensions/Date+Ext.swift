@@ -10,6 +10,7 @@ import Foundation
 public extension Date {
     func dayName() -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_BR")
         dateFormatter.setLocalizedDateFormatFromTemplate("EEE")
         return dateFormatter.string(from: self)
     }

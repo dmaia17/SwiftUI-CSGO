@@ -11,12 +11,9 @@
 		5147E9BA2A7B064F00271E31 /* SwiftUI_CSGOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9B92A7B064F00271E31 /* SwiftUI_CSGOApp.swift */; };
 		5147E9BE2A7B065000271E31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5147E9BD2A7B065000271E31 /* Assets.xcassets */; };
 		5147E9C12A7B065000271E31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5147E9C02A7B065000271E31 /* Preview Assets.xcassets */; };
-		5147E9CB2A7B065000271E31 /* SwiftUI_CSGOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9CA2A7B065000271E31 /* SwiftUI_CSGOTests.swift */; };
+		5147E9CB2A7B065000271E31 /* CSGOMainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9CA2A7B065000271E31 /* CSGOMainViewModelTests.swift */; };
 		5147E9D52A7B065000271E31 /* SwiftUI_CSGOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9D42A7B065000271E31 /* SwiftUI_CSGOUITests.swift */; };
 		5147E9D72A7B065000271E31 /* SwiftUI_CSGOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9D62A7B065000271E31 /* SwiftUI_CSGOUITestsLaunchTests.swift */; };
-		5147E9E92A7B104000271E31 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9E82A7B104000271E31 /* DefaultRouter.swift */; };
-		5147E9EB2A7B104F00271E31 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9EA2A7B104F00271E31 /* NavigationRouter.swift */; };
-		5147E9ED2A7B105F00271E31 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9EC2A7B105F00271E31 /* Coordinator.swift */; };
 		5147E9F32A7B112F00271E31 /* CSGOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9F22A7B112F00271E31 /* CSGOMainView.swift */; };
 		5147E9F52A7B114000271E31 /* CSGOMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9F42A7B114000271E31 /* CSGOMainViewModel.swift */; };
 		5147E9F82A7B116600271E31 /* CSGODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147E9F72A7B116600271E31 /* CSGODetailViewModel.swift */; };
@@ -38,6 +35,7 @@
 		5147EA1E2A81317E00271E31 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5147EA1D2A81317E00271E31 /* Roboto-Bold.ttf */; };
 		5147EA202A81318900271E31 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5147EA1F2A81318900271E31 /* Roboto-Regular.ttf */; };
 		5147EA222A81324600271E31 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA212A81324600271E31 /* Font+Ext.swift */; };
+		5147EA242A8135A700271E31 /* MockCSGOServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA232A8135A700271E31 /* MockCSGOServiceProvider.swift */; };
 		693FF7E9D6E4EED93998B59E /* Pods_SwiftUI_CSGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */; };
 		B3FBC278A44111EC8A08E27F /* Pods_SwiftUI_CSGOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490FA79CA27E202B8311EB90 /* Pods_SwiftUI_CSGOTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,13 +69,10 @@
 		5147E9BD2A7B065000271E31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5147E9C02A7B065000271E31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5147E9C62A7B065000271E31 /* SwiftUI-CSGOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-CSGOTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5147E9CA2A7B065000271E31 /* SwiftUI_CSGOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CSGOTests.swift; sourceTree = "<group>"; };
+		5147E9CA2A7B065000271E31 /* CSGOMainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOMainViewModelTests.swift; sourceTree = "<group>"; };
 		5147E9D02A7B065000271E31 /* SwiftUI-CSGOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-CSGOUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5147E9D42A7B065000271E31 /* SwiftUI_CSGOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CSGOUITests.swift; sourceTree = "<group>"; };
 		5147E9D62A7B065000271E31 /* SwiftUI_CSGOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CSGOUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5147E9E82A7B104000271E31 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
-		5147E9EA2A7B104F00271E31 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		5147E9EC2A7B105F00271E31 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5147E9F22A7B112F00271E31 /* CSGOMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOMainView.swift; sourceTree = "<group>"; };
 		5147E9F42A7B114000271E31 /* CSGOMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGOMainViewModel.swift; sourceTree = "<group>"; };
 		5147E9F72A7B116600271E31 /* CSGODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGODetailViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +95,7 @@
 		5147EA1D2A81317E00271E31 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		5147EA1F2A81318900271E31 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		5147EA212A81324600271E31 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		5147EA232A8135A700271E31 /* MockCSGOServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCSGOServiceProvider.swift; sourceTree = "<group>"; };
 		552B65AEF313E56C40685FE8 /* Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAF418637C3728BECF31DD9E /* Pods-SwiftUI-CSGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO/Pods-SwiftUI-CSGO.release.xcconfig"; sourceTree = "<group>"; };
 		B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_CSGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +156,6 @@
 			children = (
 				5147EA142A8001EE00271E31 /* Info.plist */,
 				5147E9E32A7B0F8E00271E31 /* Commom */,
-				5147E9E42A7B0FB300271E31 /* Coordinators */,
 				5147E9E62A7B100100271E31 /* Infrastructure */,
 				5147E9F62A7B114700271E31 /* Models */,
 				5147E9BF2A7B065000271E31 /* Preview Content */,
@@ -182,7 +177,8 @@
 		5147E9C92A7B065000271E31 /* SwiftUI-CSGOTests */ = {
 			isa = PBXGroup;
 			children = (
-				5147E9CA2A7B065000271E31 /* SwiftUI_CSGOTests.swift */,
+				5147EA252A81393B00271E31 /* Mock */,
+				5147E9CA2A7B065000271E31 /* CSGOMainViewModelTests.swift */,
 			);
 			path = "SwiftUI-CSGOTests";
 			sourceTree = "<group>";
@@ -209,16 +205,6 @@
 			path = Commom;
 			sourceTree = "<group>";
 		};
-		5147E9E42A7B0FB300271E31 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				5147E9E72A7B103200271E31 /* Routers */,
-				5147E9EA2A7B104F00271E31 /* NavigationRouter.swift */,
-				5147E9EC2A7B105F00271E31 /* Coordinator.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
 		5147E9E52A7B0FE100271E31 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,14 +219,6 @@
 				5147E9B92A7B064F00271E31 /* SwiftUI_CSGOApp.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		5147E9E72A7B103200271E31 /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-				5147E9E82A7B104000271E31 /* DefaultRouter.swift */,
-			);
-			path = Routers;
 			sourceTree = "<group>";
 		};
 		5147E9EE2A7B10A000271E31 /* Service */ = {
@@ -309,6 +287,14 @@
 				5147EA1D2A81317E00271E31 /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5147EA252A81393B00271E31 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5147EA232A8135A700271E31 /* MockCSGOServiceProvider.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		68E40DCEBFB56527C92320C0 /* Pods */ = {
@@ -582,11 +568,8 @@
 				5147EA082A7B2BBA00271E31 /* CSGOServiceProvider.swift in Sources */,
 				5147EA0C2A7D743900271E31 /* CornerRadiusStyle.swift in Sources */,
 				5147EA042A7B2A6500271E31 /* CSGOOpponentModel.swift in Sources */,
-				5147E9E92A7B104000271E31 /* DefaultRouter.swift in Sources */,
 				5147EA122A7FF62200271E31 /* PlaceholderImage.swift in Sources */,
-				5147E9ED2A7B105F00271E31 /* Coordinator.swift in Sources */,
 				5147EA062A7B2A7700271E31 /* CSGOPlayerModel.swift in Sources */,
-				5147E9EB2A7B104F00271E31 /* NavigationRouter.swift in Sources */,
 				5147EA182A81230A00271E31 /* Date+Ext.swift in Sources */,
 				5147E9FA2A7B117B00271E31 /* CSGODetailView.swift in Sources */,
 				5147EA002A7B2A3300271E31 /* CSGOLeagueModel.swift in Sources */,
@@ -604,7 +587,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5147E9CB2A7B065000271E31 /* SwiftUI_CSGOTests.swift in Sources */,
+				5147EA242A8135A700271E31 /* MockCSGOServiceProvider.swift in Sources */,
+				5147E9CB2A7B065000271E31 /* CSGOMainViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

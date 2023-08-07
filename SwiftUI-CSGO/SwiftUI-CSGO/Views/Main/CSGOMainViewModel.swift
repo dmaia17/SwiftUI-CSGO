@@ -50,11 +50,11 @@ class CSGOMainViewModel: ObservableObject {
         let date = match.begin_at.toDate() ?? .now
 
         if date.isInToday {
-          return String(format: Strings.timeFormat, Strings.today, date.hourAndMin())
+            return String(format: Strings.timeFormat, Strings.today, date.hourAndMin())
         } else if date.isMoreThanSevenDay {
-          return String(format: Strings.timeFormat, date.dayAndMonth(), date.hourAndMin())
+            return String(format: Strings.timeFormat, date.dayAndMonth(), date.hourAndMin()).replacingOccurrences(of: ".", with: "")
         } else {
-          return String(format: Strings.timeFormat, date.dayName().uppercased(), date.hourAndMin())
+            return String(format: Strings.timeFormat, date.dayName().uppercased(), date.hourAndMin()).replacingOccurrences(of: ".", with: "")
         }
     }
 

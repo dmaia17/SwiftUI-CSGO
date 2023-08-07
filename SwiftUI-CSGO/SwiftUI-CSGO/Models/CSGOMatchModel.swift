@@ -17,6 +17,10 @@ struct CSGOMatchModel: Codable, Identifiable, Equatable {
     
     init() {}
 
+    init(begin_at: String) {
+        self.begin_at = begin_at
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
