@@ -31,40 +31,46 @@ struct CSGOMainView: View {
     }
 
     private var listView: some View {
-        List(viewModel.matches) { match in
-            itemListView(match: match)
-                .listRowBackground(Color.CSGOPrimary)
-                .listRowSeparator(.hidden)
-                .overlay {
-                    NavigationLink("", destination: CSGODetailView(match: match))
-                        .opacity(0)
-                }
-        }
-        .listStyle(.inset)
-        .refreshable {
-            viewModel.refreshMatches()
-        }
-        .onAppear {
-            UIRefreshControl.appearance().tintColor = .white
-        }
-        .scrollContentBackground(.hidden)
+        VStack(alignment: .leading) {
+            Text("PARTIDAS")
+                .foregroundColor(.white)
+                .padding(24)
 
+            List(viewModel.matches) { match in
+                itemListView(match: match)
+                    .listRowBackground(Color.CSGOPrimary)
+                    .listRowSeparator(.hidden)
+                    .overlay {
+                        NavigationLink("", destination: CSGODetailView(match: match))
+                            .opacity(0)
+                    }
+            }
+            .listStyle(.inset)
+            .refreshable {
+                viewModel.refreshMatches()
+            }
+            .onAppear {
+                UIRefreshControl.appearance().tintColor = .white
+            }
+            .scrollContentBackground(.hidden)
+        }
     }
 
     private var errorView: some View {
         Text("Ocorreu um erro!")
+            .foregroundColor(.white)
     }
 
     private func itemListView(match: CSGOMatchModel) -> some View {
         VStack {
             VStack(spacing: 0) {
-                itemListHeaderView()
+                itemListHeaderView(match: match)
                 itemListOpponentView(match: match)
                 itemListBottomView(match: match)
             }
             .padding(.bottom, 16)
             .background(Color.CSGODarkBlue)
-            .cornerRadius(8)
+            .cornerRadius(16)
 
             if match == viewModel.matches.last && viewModel.hasMorePages {
                 ProgressView()
@@ -78,15 +84,23 @@ struct CSGOMainView: View {
             }
         }
     }
-    private func itemListHeaderView() -> some View {
+    private func itemListHeaderView(match: CSGOMatchModel) -> some View {
         HStack {
             Spacer()
 
-            Text("AGORA")
-                .foregroundColor(.white)
-                .padding(8)
-                .background(Color.CSGORed)
-                .cornerRadius(6, corners: [.topRight, .bottomLeft])
+            if match.status == .running {
+                Text("AGORA")
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Color.CSGORed)
+                    .cornerRadius(16, corners: [.topRight, .bottomLeft])
+            } else {
+                Text(viewModel.getMatchDateStatus(match: match))
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Color.CSGOGray)
+                    .cornerRadius(16, corners: [.topRight, .bottomLeft])
+            }
         }
     }
 
@@ -108,6 +122,7 @@ struct CSGOMainView: View {
                     PlaceholderImage(size: 60)
                 }
             }
+            .frame(minWidth: 0, maxWidth: .infinity)
 
             Text("vs")
                 .foregroundColor(.white)
@@ -128,6 +143,7 @@ struct CSGOMainView: View {
                     PlaceholderImage(size: 60)
                 }
             }
+            .frame(minWidth: 0, maxWidth: .infinity)
         }
         .padding(16)
     }

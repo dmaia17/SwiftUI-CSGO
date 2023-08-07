@@ -32,6 +32,9 @@
 		5147EA0E2A7D745B00271E31 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0D2A7D745B00271E31 /* View+Ext.swift */; };
 		5147EA102A7DE1CF00271E31 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA0F2A7DE1CF00271E31 /* ViewState.swift */; };
 		5147EA122A7FF62200271E31 /* PlaceholderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA112A7FF62200271E31 /* PlaceholderImage.swift */; };
+		5147EA162A81215000271E31 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA152A81215000271E31 /* String+Ext.swift */; };
+		5147EA182A81230A00271E31 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA172A81230A00271E31 /* Date+Ext.swift */; };
+		5147EA1B2A812D3B00271E31 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA1A2A812D3B00271E31 /* NavigationBackButton.swift */; };
 		693FF7E9D6E4EED93998B59E /* Pods_SwiftUI_CSGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */; };
 		B3FBC278A44111EC8A08E27F /* Pods_SwiftUI_CSGOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490FA79CA27E202B8311EB90 /* Pods_SwiftUI_CSGOTests.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +90,10 @@
 		5147EA0D2A7D745B00271E31 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		5147EA0F2A7DE1CF00271E31 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		5147EA112A7FF62200271E31 /* PlaceholderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImage.swift; sourceTree = "<group>"; };
+		5147EA142A8001EE00271E31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5147EA152A81215000271E31 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		5147EA172A81230A00271E31 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		5147EA1A2A812D3B00271E31 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		552B65AEF313E56C40685FE8 /* Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAF418637C3728BECF31DD9E /* Pods-SwiftUI-CSGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO/Pods-SwiftUI-CSGO.release.xcconfig"; sourceTree = "<group>"; };
 		B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_CSGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +152,7 @@
 		5147E9B82A7B064F00271E31 /* SwiftUI-CSGO */ = {
 			isa = PBXGroup;
 			children = (
+				5147EA142A8001EE00271E31 /* Info.plist */,
 				5147E9E32A7B0F8E00271E31 /* Commom */,
 				5147E9E42A7B0FB300271E31 /* Coordinators */,
 				5147E9E62A7B100100271E31 /* Infrastructure */,
@@ -185,11 +193,11 @@
 		5147E9E32A7B0F8E00271E31 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
-				5147E9FB2A7B11A700271E31 /* Color+Ext.swift */,
+				5147EA192A812D1C00271E31 /* Extensions */,
 				5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */,
-				5147EA0D2A7D745B00271E31 /* View+Ext.swift */,
-				5147EA0F2A7DE1CF00271E31 /* ViewState.swift */,
 				5147EA112A7FF62200271E31 /* PlaceholderImage.swift */,
+				5147EA0F2A7DE1CF00271E31 /* ViewState.swift */,
+				5147EA1A2A812D3B00271E31 /* NavigationBackButton.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -273,6 +281,17 @@
 				5147EA052A7B2A7700271E31 /* CSGOPlayerModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5147EA192A812D1C00271E31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5147E9FB2A7B11A700271E31 /* Color+Ext.swift */,
+				5147EA172A81230A00271E31 /* Date+Ext.swift */,
+				5147EA152A81215000271E31 /* String+Ext.swift */,
+				5147EA0D2A7D745B00271E31 /* View+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		68E40DCEBFB56527C92320C0 /* Pods */ = {
@@ -536,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5147EA1B2A812D3B00271E31 /* NavigationBackButton.swift in Sources */,
 				5147EA0E2A7D745B00271E31 /* View+Ext.swift in Sources */,
 				5147E9FE2A7B2A0900271E31 /* CSGOMatchModel.swift in Sources */,
 				5147E9F52A7B114000271E31 /* CSGOMainViewModel.swift in Sources */,
@@ -548,12 +568,14 @@
 				5147E9ED2A7B105F00271E31 /* Coordinator.swift in Sources */,
 				5147EA062A7B2A7700271E31 /* CSGOPlayerModel.swift in Sources */,
 				5147E9EB2A7B104F00271E31 /* NavigationRouter.swift in Sources */,
+				5147EA182A81230A00271E31 /* Date+Ext.swift in Sources */,
 				5147E9FA2A7B117B00271E31 /* CSGODetailView.swift in Sources */,
 				5147EA002A7B2A3300271E31 /* CSGOLeagueModel.swift in Sources */,
 				5147E9BA2A7B064F00271E31 /* SwiftUI_CSGOApp.swift in Sources */,
 				5147EA102A7DE1CF00271E31 /* ViewState.swift in Sources */,
 				5147E9F82A7B116600271E31 /* CSGODetailViewModel.swift in Sources */,
 				5147E9FC2A7B11A700271E31 /* Color+Ext.swift in Sources */,
+				5147EA162A81215000271E31 /* String+Ext.swift in Sources */,
 				5147EA022A7B2A4F00271E31 /* CSGOGameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,9 +739,9 @@
 				DEVELOPMENT_TEAM = 36N72V4683;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-CSGO/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -750,9 +772,9 @@
 				DEVELOPMENT_TEAM = 36N72V4683;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-CSGO/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -18,6 +18,11 @@ class CSGOMainViewModel: ObservableObject {
 
     private let service: CSGOServiceProviderProtocol
 
+    enum Strings {
+        static let today = "HOJE"
+        static let timeFormat = "%@, %@"
+    }
+
     init(service: CSGOServiceProviderProtocol) {
         self.service = service
         self.fetchMatches()
@@ -39,6 +44,18 @@ class CSGOMainViewModel: ObservableObject {
         hasMorePages = true
         currentPage = 1
         fetchMatches()
+    }
+
+    func getMatchDateStatus(match: CSGOMatchModel) -> String {
+        let date = match.begin_at.toDate() ?? .now
+
+        if date.isInToday {
+          return String(format: Strings.timeFormat, Strings.today, date.hourAndMin())
+        } else if date.isMoreThanSevenDay {
+          return String(format: Strings.timeFormat, date.dayAndMonth(), date.hourAndMin())
+        } else {
+          return String(format: Strings.timeFormat, date.dayName().uppercased(), date.hourAndMin())
+        }
     }
 
     // MARK: Private methods
