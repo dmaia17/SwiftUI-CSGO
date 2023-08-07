@@ -103,78 +103,80 @@ struct CSGODetailView: View {
     }
 
     private func playersView() -> some View {
-        HStack(spacing: 12) {
-            VStack {
-                ForEach(Array(viewModel.firstPlayerList.enumerated()), id: \.offset) { index, player in
-                    HStack {
-                        VStack {
-                            Text(player.slug)
-                                .font(.bold14)
-                                .lineLimit(1)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-
-                            Text(player.name)
-                                .font(.bold12)
-                                .lineLimit(1)
-                                .foregroundColor(.CSGOGray)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
+        ScrollView(.vertical) {
+            HStack(spacing: 12) {
+                VStack {
+                    ForEach(Array(viewModel.firstPlayerList.enumerated()), id: \.offset) { index, player in
+                        HStack {
+                            VStack {
+                                Text(player.slug)
+                                    .font(.bold14)
+                                    .lineLimit(1)
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                
+                                Text(player.name)
+                                    .font(.bold12)
+                                    .lineLimit(1)
+                                    .foregroundColor(.CSGOGray)
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                            }
+                            
+                            AsyncImage(url: URL(string: player.image_url)) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                                    .cornerRadius(8)
+                            } placeholder: {
+                                PlaceholderImage(size: 60, cornerRadius: 8)
+                            }
                         }
-
-                        AsyncImage(url: URL(string: player.image_url)) { image in
-                            image
-                                .resizable()
-                                .frame(width: 60, height: 60)
-                                .cornerRadius(8)
-                        } placeholder: {
-                            PlaceholderImage(size: 60, cornerRadius: 8)
-                        }
+                        .padding(.trailing, 8)
+                        .padding(.bottom, 8)
+                        .background(Color.CSGODarkBlue)
+                        .cornerRadius(8, corners: [.topRight, .bottomRight])
                     }
-                    .padding(.trailing, 8)
-                    .padding(.bottom, 8)
-                    .background(Color.CSGODarkBlue)
-                    .cornerRadius(8, corners: [.topRight, .bottomRight])
+                    
+                    Spacer()
                 }
-
-                Spacer()
-            }
-            .frame(minWidth: 0, maxWidth: .infinity)
-
-            VStack {
-                ForEach(Array(viewModel.secondPlayerList.enumerated()), id: \.offset) { index, player in
-                    HStack {
-                        AsyncImage(url: URL(string: player.image_url)) { image in
-                            image
-                                .resizable()
-                                .frame(width: 60, height: 60)
-                                .cornerRadius(8)
-                        } placeholder: {
-                            PlaceholderImage(size: 60, cornerRadius: 8)
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+                VStack {
+                    ForEach(Array(viewModel.secondPlayerList.enumerated()), id: \.offset) { index, player in
+                        HStack {
+                            AsyncImage(url: URL(string: player.image_url)) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                                    .cornerRadius(8)
+                            } placeholder: {
+                                PlaceholderImage(size: 60, cornerRadius: 8)
+                            }
+                            
+                            VStack {
+                                Text(player.slug)
+                                    .font(.bold14)
+                                    .lineLimit(1)
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Text(player.name)
+                                    .font(.bold12)
+                                    .lineLimit(1)
+                                    .foregroundColor(.CSGOGray)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                         }
-
-                        VStack {
-                            Text(player.slug)
-                                .font(.bold14)
-                                .lineLimit(1)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-
-                            Text(player.name)
-                                .font(.bold12)
-                                .lineLimit(1)
-                                .foregroundColor(.CSGOGray)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
+                        .padding(.leading, 8)
+                        .padding(.bottom, 8)
+                        .background(Color.CSGODarkBlue)
+                        .cornerRadius(8, corners: [.topLeft, .bottomLeft])
                     }
-                    .padding(.leading, 8)
-                    .padding(.bottom, 8)
-                    .background(Color.CSGODarkBlue)
-                    .cornerRadius(8, corners: [.topLeft, .bottomLeft])
+                    
+                    Spacer()
                 }
-
-                Spacer()
+                .frame(minWidth: 0, maxWidth: .infinity)
             }
-            .frame(minWidth: 0, maxWidth: .infinity)
         }
     }
 
