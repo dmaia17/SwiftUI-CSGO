@@ -36,6 +36,7 @@ struct CSGODetailView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: NavigationBackButton())
             .navigationTitle(viewModel.match.league?.name ?? "")
+            .preferredColorScheme(.dark)
         }
     }
 

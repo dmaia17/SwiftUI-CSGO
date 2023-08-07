@@ -26,6 +26,7 @@ struct CSGOMainView: View {
                 }
                 .frame(minWidth: geo.size.width, minHeight: geo.size.height)
                 .background(Color.CSGOPrimary)
+                .preferredColorScheme(.dark)
             }
         }
     }
