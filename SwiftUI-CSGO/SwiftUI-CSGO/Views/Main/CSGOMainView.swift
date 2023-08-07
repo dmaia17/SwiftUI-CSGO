@@ -59,6 +59,7 @@ struct CSGOMainView: View {
     private var errorView: some View {
         Text("Ocorreu um erro!")
             .foregroundColor(.white)
+            .font(.bold14)
     }
 
     private func itemListView(match: CSGOMatchModel) -> some View {
@@ -90,12 +91,14 @@ struct CSGOMainView: View {
 
             if match.status == .running {
                 Text("AGORA")
+                    .font(.bold8)
                     .foregroundColor(.white)
                     .padding(8)
                     .background(Color.CSGORed)
                     .cornerRadius(16, corners: [.topRight, .bottomLeft])
             } else {
                 Text(viewModel.getMatchDateStatus(match: match))
+                    .font(.bold8)
                     .foregroundColor(.white)
                     .padding(8)
                     .background(Color.CSGOGray)
@@ -117,6 +120,7 @@ struct CSGOMainView: View {
                     }
 
                     Text(opponents[0].opponent?.name ?? "")
+                        .font(.regular10)
                         .foregroundColor(.white)
                 } else {
                     PlaceholderImage(size: 60)
@@ -125,6 +129,7 @@ struct CSGOMainView: View {
             .frame(minWidth: 0, maxWidth: .infinity)
 
             Text("vs")
+                .font(.regular12)
                 .foregroundColor(.white)
 
             VStack {
@@ -138,7 +143,8 @@ struct CSGOMainView: View {
                     }
 
                     Text(opponents[1].opponent?.name ?? "")
-                        .foregroundColor(.CSGOGray)
+                        .font(.regular10)
+                        .foregroundColor(.white)
                 } else {
                     PlaceholderImage(size: 60)
                 }
@@ -152,7 +158,7 @@ struct CSGOMainView: View {
         VStack{
             Divider()
                 .background(Color.CSGOGray)
-                .padding(.vertical, 16)
+                .padding(.vertical, 8)
 
             HStack {
                 AsyncImage(url: URL(string: match.league?.image_url ?? "")) { image in
@@ -164,6 +170,7 @@ struct CSGOMainView: View {
                 }
 
                 Text(match.league?.name ?? "")
+                    .font(.regular8)
                     .foregroundColor(.CSGOGray)
             }
             .padding(.horizontal, 16)

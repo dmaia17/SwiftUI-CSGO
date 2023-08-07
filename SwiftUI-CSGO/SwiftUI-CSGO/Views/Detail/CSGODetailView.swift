@@ -43,8 +43,10 @@ struct CSGODetailView: View {
         VStack {
             headerView
 
-            Text("Hoje 21:00")
+            Text(viewModel.timeStatus)
+                .font(.bold12)
                 .foregroundColor(.white)
+                .padding(.bottom, 20)
 
             playersView()
 
@@ -65,6 +67,7 @@ struct CSGODetailView: View {
                     }
 
                     Text(opponents[0].opponent?.name ?? "")
+                        .font(.regular10)
                         .foregroundColor(.white)
                 } else {
                     PlaceholderImage(size: 60)
@@ -73,6 +76,7 @@ struct CSGODetailView: View {
             .frame(minWidth: 0, maxWidth: .infinity)
 
             Text("vs")
+                .font(.regular12)
                 .foregroundColor(.CSGOGray)
 
             VStack {
@@ -86,6 +90,7 @@ struct CSGODetailView: View {
                     }
 
                     Text(opponents[1].opponent?.name ?? "")
+                        .font(.regular10)
                         .foregroundColor(.white)
                 } else {
                     PlaceholderImage(size: 60)
@@ -93,21 +98,23 @@ struct CSGODetailView: View {
             }
             .frame(minWidth: 0, maxWidth: .infinity)
         }
-        .padding(16)
+        .padding(20)
     }
 
     private func playersView() -> some View {
-        HStack {
+        HStack(spacing: 12) {
             VStack {
                 ForEach(Array(viewModel.firstPlayerList.enumerated()), id: \.offset) { index, player in
                     HStack {
                         VStack {
                             Text(player.slug)
+                                .font(.bold14)
                                 .lineLimit(1)
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
 
                             Text(player.name)
+                                .font(.bold12)
                                 .lineLimit(1)
                                 .foregroundColor(.CSGOGray)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
@@ -146,11 +153,13 @@ struct CSGODetailView: View {
 
                         VStack {
                             Text(player.slug)
+                                .font(.bold14)
                                 .lineLimit(1)
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .leading)
 
                             Text(player.name)
+                                .font(.bold12)
                                 .lineLimit(1)
                                 .foregroundColor(.CSGOGray)
                                 .frame(maxWidth: .infinity, alignment: .leading)

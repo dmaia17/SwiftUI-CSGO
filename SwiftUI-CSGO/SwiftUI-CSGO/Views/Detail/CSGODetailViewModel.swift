@@ -18,6 +18,13 @@ class CSGODetailViewModel: ObservableObject {
     var secondPlayerList: [CSGOPlayerModel] = []
 
     @Published private(set) var state: State = .loading
+    @Published var timeStatus: String = ""
+
+    enum Strings {
+        static let running = "AGORA"
+        static let today = "HOJE"
+        static let timeFormat = "%@, %@"
+    }
 
     init(match: CSGOMatchModel, service: CSGOServiceProviderProtocol) {
         self.match = match
@@ -35,6 +42,8 @@ class CSGODetailViewModel: ObservableObject {
 
           getPlayers(team1: firstTeamId, team2: secondTeamId)
         }
+
+        setTimeStatus()
     }
 
     // MARK: Private methods
@@ -67,5 +76,21 @@ class CSGODetailViewModel: ObservableObject {
     private func configLists(list: [CSGOPlayerModel]) {
       firstPlayerList = list.filter { $0.current_team?.id == firstTeamId }
       secondPlayerList = list.filter { $0.current_team?.id == secondTeamId }
+    }
+
+    private func setTimeStatus() {
+        if match.status == .running {
+          timeStatus = Strings.running
+        } else {
+          let date = match.begin_at.toDate() ?? .now
+
+          if date.isInToday {
+              timeStatus = String(format: Strings.timeFormat, Strings.today, date.hourAndMin())
+          } else if date.isMoreThanSevenDay {
+              timeStatus = String(format: Strings.timeFormat, date.dayAndMonth(), date.hourAndMin())
+          } else {
+              timeStatus = String(format: Strings.timeFormat, date.dayName().uppercased(), date.hourAndMin())
+          }
+        }
     }
 }

@@ -35,6 +35,9 @@
 		5147EA162A81215000271E31 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA152A81215000271E31 /* String+Ext.swift */; };
 		5147EA182A81230A00271E31 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA172A81230A00271E31 /* Date+Ext.swift */; };
 		5147EA1B2A812D3B00271E31 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA1A2A812D3B00271E31 /* NavigationBackButton.swift */; };
+		5147EA1E2A81317E00271E31 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5147EA1D2A81317E00271E31 /* Roboto-Bold.ttf */; };
+		5147EA202A81318900271E31 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5147EA1F2A81318900271E31 /* Roboto-Regular.ttf */; };
+		5147EA222A81324600271E31 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147EA212A81324600271E31 /* Font+Ext.swift */; };
 		693FF7E9D6E4EED93998B59E /* Pods_SwiftUI_CSGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */; };
 		B3FBC278A44111EC8A08E27F /* Pods_SwiftUI_CSGOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490FA79CA27E202B8311EB90 /* Pods_SwiftUI_CSGOTests.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +97,9 @@
 		5147EA152A81215000271E31 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		5147EA172A81230A00271E31 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		5147EA1A2A812D3B00271E31 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
+		5147EA1D2A81317E00271E31 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		5147EA1F2A81318900271E31 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		5147EA212A81324600271E31 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		552B65AEF313E56C40685FE8 /* Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests/Pods-SwiftUI-CSGO-SwiftUI-CSGOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAF418637C3728BECF31DD9E /* Pods-SwiftUI-CSGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-CSGO.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-CSGO/Pods-SwiftUI-CSGO.release.xcconfig"; sourceTree = "<group>"; };
 		B9E1B6A2787A92A2D46ED8CF /* Pods_SwiftUI_CSGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_CSGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +199,7 @@
 		5147E9E32A7B0F8E00271E31 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				5147EA1C2A81317200271E31 /* Fonts */,
 				5147EA192A812D1C00271E31 /* Extensions */,
 				5147EA0B2A7D743900271E31 /* CornerRadiusStyle.swift */,
 				5147EA112A7FF62200271E31 /* PlaceholderImage.swift */,
@@ -290,8 +297,18 @@
 				5147EA172A81230A00271E31 /* Date+Ext.swift */,
 				5147EA152A81215000271E31 /* String+Ext.swift */,
 				5147EA0D2A7D745B00271E31 /* View+Ext.swift */,
+				5147EA212A81324600271E31 /* Font+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5147EA1C2A81317200271E31 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5147EA1F2A81318900271E31 /* Roboto-Regular.ttf */,
+				5147EA1D2A81317E00271E31 /* Roboto-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		68E40DCEBFB56527C92320C0 /* Pods */ = {
@@ -428,6 +445,8 @@
 			files = (
 				5147E9C12A7B065000271E31 /* Preview Assets.xcassets in Resources */,
 				5147E9BE2A7B065000271E31 /* Assets.xcassets in Resources */,
+				5147EA202A81318900271E31 /* Roboto-Regular.ttf in Resources */,
+				5147EA1E2A81317E00271E31 /* Roboto-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +595,7 @@
 				5147E9F82A7B116600271E31 /* CSGODetailViewModel.swift in Sources */,
 				5147E9FC2A7B11A700271E31 /* Color+Ext.swift in Sources */,
 				5147EA162A81215000271E31 /* String+Ext.swift in Sources */,
+				5147EA222A81324600271E31 /* Font+Ext.swift in Sources */,
 				5147EA022A7B2A4F00271E31 /* CSGOGameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
